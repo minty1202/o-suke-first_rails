@@ -8,20 +8,15 @@ default: &default
 
 development:
   <<: *default
-  database: salon_development
+  database: rails_first_osk_development
 
 test:
   <<: *default
   host: <%= ENV.fetch('APP_DATABASE_HOST') { 'db' } %>
-  database: salon_test
-
-staging:
-  <<: *default
-  database: salon_development
-  url: <%= ENV['DATABASE_URL'] %>
+  database: rails_first_osk_test
 
 production:
   <<: *default
-  database: salon_production
+  database: rails_first_osk_production
   url: <%= ENV['DATABASE_URL'] %>
 
